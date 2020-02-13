@@ -1,0 +1,15 @@
+include: 'https://gitlab.com/eric.fu/hola/raw/master/.gitlab-common.yml'
+
+variables:
+  APP: currency
+  REPOSITORY_NAME: service.currency
+  BUILD_URL: cmd/service/*.go
+
+build currency:
+  extends: .build
+
+currency dev:
+  extends: .deploy_dev
+
+currency prod:
+  extends: .deploy_prod
